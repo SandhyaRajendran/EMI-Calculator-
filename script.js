@@ -26,10 +26,10 @@ mbtn.addEventListener('click', (e) => {
         thirdOP.innerText = ''
     }
     let emi = [((homeLoan.value) * (intrestRate.value) / 1200) * ((1 + (intrestRate.value) / 1200) ** loanTenure.value)] / [((1 + (intrestRate.value) / 1200) ** loanTenure.value) - 1];
-    firstOP.innerText = "₹" + Math.round(emi) + '/-'
+    firstOP.innerText = "₹" + Math.round(emi).toLocaleString() + '/-'
     const last = Math.abs(Number(homeLoan.value) - (emi * loanTenure.value))
-    secondOP.innerText = "₹" + Math.round(emi * loanTenure.value) + '/-'
-    thirdOP.innerText = "₹" + Math.round(last) + '/-';
+    secondOP.innerText = "₹" + Math.round(emi * loanTenure.value).toLocaleString() + '/-';
+    thirdOP.innerText = "₹" + Math.round(last).toLocaleString() + "/-";
     if (intrestRate.value == 0) {
         alert('please enter interstrate value more than 0')
         firstOP.innerText = ''
@@ -51,10 +51,10 @@ ybtn.addEventListener('click', () => {
     }
     const loanTentureval = (loanTenure.value * 12)
     let emi = [((homeLoan.value) * (intrestRate.value) / 1200) * ((1 + (intrestRate.value) / 1200) ** loanTentureval)] / [((1 + (intrestRate.value) / 1200) ** loanTentureval) - 1];
-    firstOP.innerText = "₹" + Math.round(emi) + '/-'
+    firstOP.innerText = "₹" + Math.round(emi).toLocaleString() + '/-'
     const last = Math.abs(Number(homeLoan.value) - (emi * loanTentureval))
-    secondOP.innerText = "₹" + Math.round(emi * loanTentureval) + '/-'.toLocaleString()
-    thirdOP.innerText = "₹" + Math.round(last) + '/-'.toLocaleString()
+    secondOP.innerText = "₹" + Math.round(emi * loanTentureval).toLocaleString() + '/-'
+    thirdOP.innerText = "₹" + Math.round(last).toLocaleString() + '/-'
 
     if (intrestRate.value == 0) {
         alert('please enter interstrate value more than 0')
